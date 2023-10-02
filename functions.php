@@ -109,4 +109,4 @@ function ali_nav_description( $item_output, $item, $args){
   }
   return $item_output;
 }
-add_filter('walker_nav_menu_start_el', 'ali_nav_description', 10, 3);
+//add_filter('walker_nav_menu_start_el', 'ali_nav_description', 10, 3);
