@@ -6,6 +6,16 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class();  ?>>
+
+    <div id="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <a href=""><img  src="<?php echo get_theme_mod( 'ali_logo' ) ?>"  alt="logo" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
    
     <?php wp_footer(); ?>
 </body>

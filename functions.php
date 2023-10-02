@@ -29,3 +29,25 @@ function ali_css_js_file_calling() {
 	
 }
 add_action( 'wp_enqueue_scripts', 'ali_css_js_file_calling' );
+
+
+//Theme Function
+function ali_customize_register($wp_customize){
+    $wp_customize->add_section('ali_header_area', [
+        'title' => __('Header Areas', 'procoderbd'),
+        'description' => 'If you are interested to update header area , you can do in here.'
+    ]);
+
+    $wp_customize->add_setting('ali_logo', [
+        'default' => get_bloginfo( 'template_directory' ) . '/img/logo.png',        
+    ]);
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'ali_logo', [
+        'label' => __('Logo Upload', 'procoderbd'),
+        'description' => 'des',
+        'section' => 'ali_header_area',
+        'settings' => 'ali_logo',
+    ]));
+}
+add_action('customize_register', 'ali_customize_register');
+
