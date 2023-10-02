@@ -12,7 +12,7 @@ add_theme_support('title-tag');
 function ali_css_js_file_calling(){
   wp_enqueue_style('ali-style', get_stylesheet_uri());
   wp_register_style('bootstrap', get_template_directory_uri().'/css/bootstrap.css', array(), '5.0.2', 'all');
-  wp_register_style('custom', get_template_directory_uri().'/css/custom.css', array(), time(), 'all');
+  wp_register_style('custom', get_template_directory_uri().'/css/custom.css', array(), '1.0.0', 'all');
   wp_enqueue_style('bootstrap');
   wp_enqueue_style('custom');
 
@@ -35,6 +35,8 @@ add_action('wp_enqueue_scripts', 'ali_add_google_fonts');
 
 //Theme Function
 function ali_customizar_register($wp_customize){
+
+  //Header Area Function
   $wp_customize->add_section('ali_header_area', array(
     'title' =>__('Header Area', 'alihossain'),
     'description' => 'If you interested to update your header area, you can do it here.'
@@ -50,6 +52,29 @@ function ali_customizar_register($wp_customize){
     'setting' => 'ali_logo',
     'section' => 'ali_header_area',
   ) ));
+
+  // Menu Position Option
+  $wp_customize->add_section('ali_menu_option', array(
+    'title' => __('Menu Position Option', 'alihossain'),
+    'description' => 'If you interested to change your menu position you can do it.'
+  ));
+
+  $wp_customize->add_setting('ali_menu_position', array(
+    'default' => 'right_menu',
+  ));
+
+  $wp_customize-> add_control('ali_menu_position', array(
+    'label' => 'Menu Position',
+    'description' => 'Select your menu position',
+    'setting' => 'ali_menu_position',
+    'section' => 'ali_menu_option',
+    'type' => 'radio',
+    'choices' => array(
+      'left_menu' => 'Left Menu',
+      'right_menu' => 'Right Menu',
+      'center_menu' => 'Center Menu',
+    ),
+  ));
 
 }
 

@@ -18,8 +18,8 @@ img {
 }
 
 /*=======================================
-   Header Area Style
-  ========================================*/
+ Header Area Style
+========================================*/
 #header_area {
   padding: 15px 0;
 }
@@ -103,4 +103,29 @@ img {
 #header_area .col-md-9 ul ul li ul li a:hover {
   background: #ea1a70;
   color: #fff;
+}
+
+/*===========================================
+  Menu Position
+===========================================*/
+#header_area.left_menu .col-md-3 {
+  order: 2;
+}
+#header_area.left_menu .col-md-9 {
+  order: 1;
+}
+#header_area.left_menu .col-md-9 ul {
+  text-align: left;
+}
+
+#header_area.center_menu .col-md-3 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#header_area.center_menu .col-md-9 {
+  width: 100%;
+}
+#header_area.center_menu .col-md-9 ul {
+  text-align: center;
 }

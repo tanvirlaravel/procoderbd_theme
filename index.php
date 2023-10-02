@@ -12,28 +12,18 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <div id="header_area">
+  <div id="header_area" class="<?php echo get_theme_mod('ali_menu_position'); ?>">
     <div class="container">
       <div class="row">
-
         <div class="col-md-3">
           <a href=""><img src="<?php echo get_theme_mod('ali_logo'); ?>" alt=""></a>
         </div>
         <div class="col-md-9">
-          <?php 
-            wp_nav_menu( [
-              'theme_location'  => 'main_menu',
-              'menu_id'         => 'nav',
-            ] );
-          ?>
-                   
+          <?php wp_nav_menu( array('theme_location' => 'main_menu', 'menu_id' => 'nav') ); ?>
         </div>
       </div>
-      <!-- end row  -->
     </div>
-    <!-- end container  -->
   </div>
-  <!-- end header_area  -->
 
 
 
